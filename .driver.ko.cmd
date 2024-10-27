@@ -1,1 +1,0 @@
-cmd_/home/nandana/OS_A2/driver.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T arch/x86/module.lds -o /home/nandana/OS_A2/driver.ko /home/nandana/OS_A2/driver.o /home/nandana/OS_A2/driver.mod.o;  true

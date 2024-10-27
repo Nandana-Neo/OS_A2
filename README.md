@@ -89,3 +89,7 @@ sudo rmmod diver.ko
     ```bash
     sudo dmesg
     ```
+- Use this command to get the general information of the driver moduler(when in src directory):
+    ```bash
+        sudo modinfo driver.ko
+    ```
