@@ -18,8 +18,7 @@ module_param_array(kernel_version,int, NULL, S_IRUSR|S_IWUSR);
 
 dev_t dev=0;
 
-static int __init driver_init(void)
-{
+static int __init driver_init(void) {
     //Check kernel version
     if (kernel_version[0] != LINUX_VERSION_CODE >> 16 ||       // Major version
         kernel_version[1] != (LINUX_VERSION_CODE >> 8 & 0xFF) || // Minor version
@@ -40,8 +39,7 @@ static int __init driver_init(void)
     printf(KERN_INFO "MajorNo=%d\tMinor number=%d\n",MAJOR(dev),MINOR(dev));
 }
 
-static void __exit driver_exit(void)
-{
+static void __exit driver_exit(void) {
     printk(KERN_INFO "Goodbye world\n");
 }
 
