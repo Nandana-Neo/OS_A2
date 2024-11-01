@@ -82,10 +82,10 @@ For running the following commands, one might need sudo access. Run `sudo -s` an
     ```
         sudo dmesg
     ```
-    
+
 #### Using C Program
 The user program directly writes `NANDANA_B220424CS (<FIRSTNAME>_<ROLLNO>)` into the device. 
-Run the following commands in the main folder to get the desired results:
+Run the following commands in the src folder to get the desired results:
 ```
 gcc user.c
 sudo ./a.out
