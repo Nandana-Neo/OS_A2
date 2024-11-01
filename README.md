@@ -3,7 +3,7 @@
 
 ## Pre-requisites
 
-This usually occurs when the kernel headers haven't been installed properly.
+There might be an error when trying to run the `make` command. This usually occurs when the kernel headers haven't been installed properly.
 Run in terminal:
 ```bash
 sudo apt update
