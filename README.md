@@ -29,7 +29,7 @@ sudo apt update
     ```
     Check for a `build` symbolic link pointing to the appropriate headers directory.
     
-4. Create symbolic links
+4. Create symbolic links:
 If `build` dir is still not available,manually create the symbolic links again after confirming the headers are installed: 
     ```bash
     sudo ln -s /usr/src/linux-headers-$(uname -r) /lib/modules/$(uname -r)/build
@@ -58,12 +58,12 @@ sudo make
 We can now observe new files created in the folder. Check if `os_driver.ko` file is present.
 
 ### 2. Loading the driver
-Run this command in terminal:
+Run this command in terminal while in the src folder:
 ```bash
 sudo insmod os_driver.ko kernel_version=6,1,112
 ```
 
-Here, `6,1,112` was identified using `uname -a` command
+Here, `6,1,112`(kernel_version) was identified using `uname -a` command
 
 ### 3. Device Read/Write Operations
 
@@ -78,6 +78,11 @@ For running the following commands, one might need sudo access. Run `sudo -s` an
     ```
     cat /dev/os_driver_device
     ```
+3. We can check the log messages after these operations using 
+    ```
+        sudo dmesg
+    ```
+    
 #### Using C Program
 The user program directly writes `NANDANA_B220424CS (<FIRSTNAME>_<ROLLNO>)` into the device. 
 Run the following commands in the main folder to get the desired results:
