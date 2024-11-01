@@ -129,4 +129,4 @@ sudo rmmod os_driver.ko
     sudo modinfo os_driver.ko
     ```
 
-
+- If any command doesn't work try running with `sudo` at the beginning of the command
