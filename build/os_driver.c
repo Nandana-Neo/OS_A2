@@ -101,12 +101,11 @@ static int __init os_driver_init(void)
     printk(KERN_INFO "Kernel version matches. Proceeding with module insertion.\n");
 
     // Allocate major and minor numbers
-    if (alloc_chrdev_region(&dev, 0, 1, "OS_A2") < 0) {
+    if (alloc_chrdev_region(&dev, 0, 1, "os_driver") < 0) {
         printk(KERN_INFO "Failed to allocate inode number\n");
         return -1;
     }
 
-    pr_info("MajorNo=%d\tMinorNo=%d\n", MAJOR(dev), MINOR(dev));
 
     // Initialize cdev structure
     cdev_init(&os_cdev, &fops);
@@ -138,6 +137,7 @@ static int __init os_driver_init(void)
     }
 
     pr_info("Kernel Module Successfully Inserted..\n");
+    pr_info("MajorNo=%d\tMinorNo=%d\n", MAJOR(dev), MINOR(dev));
     return 0;
 
 r_device:

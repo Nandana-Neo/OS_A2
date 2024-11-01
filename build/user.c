@@ -8,7 +8,8 @@
 
 int main() {
     int fd;
-    char write_buf[256];
+    // char write_buf[256];
+    char write_buf[256] = "NANDANA_B220424CS";
     char read_buf[256] = {0};
 
     // Open the device file for read/write
@@ -18,15 +19,15 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    // Prompt the user for input
-    printf("Write to the device: ");
-    if (fgets(write_buf, sizeof(write_buf), stdin) == NULL) {
-        perror("Failed to read input");
-        close(fd);
-        return EXIT_FAILURE;
-    }
-    // Remove the newline character from input if it exists
-    write_buf[strcspn(write_buf, "\n")] = '\0';
+    // // Prompt the user for input
+    // printf("Write to the device: ");
+    // if (fgets(write_buf, sizeof(write_buf), stdin) == NULL) {
+    //     perror("Failed to read input");
+    //     close(fd);
+    //     return EXIT_FAILURE;
+    // }
+    // // Remove the newline character from input if it exists
+    // write_buf[strcspn(write_buf, "\n")] = '\0';
 
     // Write to the device
     if (write(fd, write_buf, strlen(write_buf)) < 0) {
